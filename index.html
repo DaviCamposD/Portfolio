@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davi Campos - Desenvolvedor Front-end</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="contains-darkmode" onclick="FuncaoDarkmode()">
+        <button id="darkmode">🌙</button>
+    </div>
+    <header>
+        <div class="header-content">
+            <a href="#home" class="logo">&lt;DC/&gt;</a>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#experiencia">Experiência</a>
+                <a href="#skills">Skills</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>OLÁ, EU SOU O</h2>
+            <h1 id="h1-escrita">Davi Campos</h1>
+            <h3>DESENVOLVEDOR FULL STACK</h3>
+
+            <div class="buttons">
+                <a href="#projetos" class="btn" id="BtnProjetos">
+                    Ver Projetos
+                </a>
+                <a href="#contato" class="btn">
+                    Contato
+                </a>
+            </div>
+        </div>
+        <div class="img_hero">
+            <img src="hero-setup.jpg" alt="">
+        </div>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <div class="sobre-img">
+            <div class="image-container">
+                <img src="Foto de Perfil.jpg">
+            </div>
+        </div>
+
+        <div class="sobre-text">
+            <h2>SOBRE MIM</h2>
+            <p class="local">BH, Minas Gerais</p>
+            <p id="texto-sobre">
+                Desenvolvedor front-end apaixonado por criar experiências digitais incríveis.
+                Especializo-me em transformar ideias em interfaces modernas e funcionais,
+                sempre buscando as melhores práticas e tecnologias mais recentes do mercado.
+                Minha missão é desenvolver soluções que não apenas funcionem perfeitamente,
+                mas que também proporcionem uma experiência única aos usuários.
+            </p>
+            <a href="curriculo_davicamposduarte.pdf" class="btn" id="btn_curriculo" download target="_blank">📝
+                Currículo</a>
+        </div>
+    </section>
+
+    <section class="experiencia" id="experiencia">
+        <h2>EXPERIÊNCIA</h2>
+        <div class="experiencia-card">
+            <div class="quote-icon">" 👀👀</div>
+            <p class="experiencia-text">Em busca da minha primeira experiência "oficial" :)</p>
+            <p class="experiencia-note">Quem sabe na sua empresa?</p>
+            <p class="contact-info">Estou disponível para conversar, você pode entrar em contato via e-mail:
+                <span>davicampos313@gmail.com</span>
+            </p>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>SKILLS</h2>
+
+        <div class="skills-container">
+
+            <div class="skills-card">
+                <h3>💻 Hard Skills</h3>
+                <ul>
+                    <li><i class="fas fa-code"></i> HTML, CSS, JavaScript, MySQL, C#</li>
+                    <li><i class="fas fa-paint-brush"></i> UI/UX e Design Responsivo</li>
+                    <li><i class="fas fa-laptop-code"></i>GitHub</li>
+                    <li><i class="fas fa-bolt"></i> Animações e Efeitos Front-end</li>
+                </ul>
+            </div>
+
+            <div class="skills-card">
+                <h3>🌱 Soft Skills</h3>
+                <ul>
+                    <li><i class="fas fa-users"></i> Trabalho em equipe</li>
+                    <li><i class="fas fa-lightbulb"></i> Resolução de problemas</li>
+                    <li><i class="fas fa-clock"></i> Gestão de tempo</li>
+                    <li><i class="fas fa-brain"></i> Aprendizado contínuo</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="projetos" id="projetos">
+        <h2>Projetos</h2>
+        <div class="projetos-grid">
+            <div class="projeto-card">
+                <div class="projeto-image">
+                    <img src="baner1.png" alt="">
+                </div>
+                <div class="projeto-content">
+                    <h3 class="projeto-title">E-Commerce Joias (Vivany)</h3>
+                    <p class="projeto-description">Plataforma inteiramente visual de um e-commerce com design
+                        responsivo!</p>
+                    <p class="projeto-tech">HTML e CSS</p>
+                    <a href="https://davicamposd.github.io/CRIA-O-DE-SITE-E-commerce-Vivany-/" class="view-btn"
+                        target="_blank">
+                        <i class="fas fa-eye"></i>
+                        Visualizar
+                    </a>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <div class="projeto-image">
+                    <img src="marvel-avengers-silhouette-lvdkbeuwsz4rc9ue.jpg" alt="">
+                </div>
+                <div class="projeto-content">
+                    <h3 class="projeto-title"></h3>
+                    <p class="projeto-description">Desenvolvendo.</p>
+                    <p class="projeto-tech">Desenvolvendo</p>
+                    <a href="#" class="view-btn" target="_blank">
+                        <i class="fas fa-eye"></i>
+                        Visualizar
+                    </a>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <div class="projeto-image">
+                    <img src="lowes-takes-photos-fKNPmWPtESI-unsplash-scaled.webp" alt="" id="banner_carro">
+                </div>
+                <div class="projeto-content">
+                    <h3 class="projeto-title"></h3>
+                    <p class="projeto-description">Desenvolvendo.</p>
+                    <p class="projeto-tech">Desenvolvendo</p>
+                    <a href="#" class="view-btn" target="_blank">
+                        <i class="fas fa-eye"></i>
+                        Visualizar
+                    </a>
+                </div>
+            </div>
+
+            <div class="projeto-card">
+                <div class="projeto-image">
+                    <img src="2cc7a861-tabela-periodica-representacao.jpg" alt="">
+                </div>
+                <div class="projeto-content">
+                    <h3 class="projeto-title">Tabela Periodica</h3>
+                    <p class="projeto-description">Meu primeiro projeto! Criei esta página para aprender e praticar as
+                        tags
+                        básicas</p>
+                    <p class="projeto-tech">HTML e CSS</p>
+                    <a href="https://davicamposd.github.io/1-Projeto-Tabela-Periodica-Simples-/" class="view-btn"
+                        target="_blank">
+                        <i class="fas fa-eye"></i>
+                        Visualizar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="contact scroll-animate">
+        <div class="contact-content">
+            <h2 class="section-title">CONTATO</h2>
+
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-intro">
+                        <h3>Vamos trabalhar juntos?</h3>
+                        <p>
+                            Estou sempre aberto a discutir novas oportunidades, projetos interessantes
+                            ou apenas bater um papo sobre tecnologia e desenvolvimento web.
+                        </p>
+                    </div>
+
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="card-info">
+                                <h4>Email</h4>
+                                <a href="mailto:davicampos13@gmail.com">davicampos313@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="card-info">
+                                <h4>Localização</h4>
+                                <p>Belo Horizonte, MG</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-buttons">
+                            <a class="contact-card btn-card" href="https://github.com/DaviCamposD" target="_blank">
+                                <div class="card-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div class="card-info">
+                                    <h4>GitHub</h4>
+                                    <p>Meu perfil</p>
+                                </div>
+                            </a>
+
+                            <a class="contact-card btn-card" href="https://www.linkedin.com/in/davicamposduarte/"
+                                target="_blank">
+                                <div class="card-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <div class="card-info">
+                                    <h4>Linkedin</h4>
+                                    <p>Conecte-se Comigo</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <div class="form-border"></div>
+                    <form class="contact-form" id="contact-form"
+                        action="https://formsubmit.co/davicamposduarte.dev@gmail.com" method="POST" target="_blank">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assunto">Tema do contato</label>
+                            <input type="text" name="assunto" placeholder="Sobre o que você quer conversar?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" name="message" rows="5"
+                                placeholder="Conte-me sobre seu projeto ou oportunidade..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <div class="btn-shimmer"></div>
+                            <i class="fas fa-paper-plane"></i>
+                            <span>Enviar Mensagem</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Desenvolvido por <span class="name">Davi Campos</span></p>
+    </footer>
+
+    <script src="script.js">
+    </script>
+</body>
+
+</html>
