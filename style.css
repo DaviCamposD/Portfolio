@@ -205,22 +205,7 @@ nav a:hover::after {
     border-radius: 50%;
     box-shadow: 0 0 15px rgba(0, 255, 0, 0.4),
         0 0 25px rgba(0, 255, 0, 0.3);
-    animation: glowPulse 2s infinite alternate;
     z-index: -1;
-}
-
-@keyframes glowPulse {
-    0% {
-        box-shadow: 0 0 10px rgba(0, 255, 0, 0.2), 0 0 20px rgba(0, 255, 0, 0.1);
-    }
-
-    50% {
-        box-shadow: 0 0 20px rgba(0, 255, 0, 0.4), 0 0 40px rgba(0, 255, 0, 0.3);
-    }
-
-    100% {
-        box-shadow: 0 0 15px rgba(0, 255, 0, 0.3), 0 0 30px rgba(0, 255, 0, 0.2);
-    }
 }
 
 /* 1° parte */
@@ -328,12 +313,24 @@ nav a:hover::after {
     font-size: 1.2rem;
 }
 
+.img_hero {
+    position: relative;
+    transition: transform 0.4s ease;
+}
+
 .img_hero img {
-    width: clamp(200px, 40vw, 600px);
-    height: auto;
-    border-radius: 10px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 255, 0, 0.5);
     animation: fadeInUp 2s ease;
+    animation: float 3s ease-in-out infinite;
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.img_hero:hover {
+    transform: scale(1.03);
 }
 
 /* 2° parte */
@@ -361,10 +358,15 @@ nav a:hover::after {
     overflow: hidden;
     background: var(--bg-card);
     padding: 5px;
+    width: 400px;
+    height: 530px;
+    object-fit: cover;
 }
 
 .sobre-img img {
-    width: 100%;
+    width: 400px;
+    height: 530px;
+    object-fit: cover;
     border-radius: 15px;
     transition: transform 0.3s ease;
 }
@@ -830,12 +832,6 @@ nav a:hover::after {
     transition: all 0.3s ease;
 }
 
-.contact-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px var(--shadow-color);
-    border-color: var(--border-hover);
-}
-
 .contact-buttons {
     display: flex;
     gap: 1rem;
@@ -972,32 +968,6 @@ nav a:hover::after {
     box-shadow: 0 6px 15px var(--shadow-color);
 }
 
-@media (min-width: 1024px) {
-    .contact-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-    }
-
-    .contact-content {
-        padding: 0 40px;
-    }
-
-    .contact-form {
-        padding: 2.5rem;
-    }
-
-    .contact-intro {
-        text-align: left;
-    }
-
-    .social-links {
-        justify-content: flex-start;
-    }
-
-    .contact-form {
-        padding: 2.5rem;
-    }
-}
 
 /* Ultima parte */
 footer {
@@ -1018,44 +988,71 @@ footer .name {
     font-weight: 700;
 }
 
+/* MODAL */
+
+.modal-dialog {
+    border: none;
+    padding: 0;
+    background: transparent;
+    inset: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-dialog::backdrop {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.65));
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    background: #000;
+    border: 1px solid rgba(29, 238, 147, 0.2);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: #1dee93;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+.modal-content .close:hover {
+    transform: scale(1.06);
+}
+
+.modal-content h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #1dee93;
+}
+
+.modal-content .modal-sub {
+    margin-top: 0.6rem;
+    color: white;
+    font-size: 0.98rem;
+}
+
 /* animacoes */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes blink {
-
-    0%,
-    50% {
-        opacity: 1;
-    }
-
-    51%,
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes cardFloat {
-
-    0%,
-    100% {
-        transform: translateY(0px) rotateY(0deg);
-    }
-
-    50% {
-        transform: translateY(-20px) rotateY(5deg);
-    }
-}
-
 @keyframes float {
 
     0%,
@@ -1065,20 +1062,19 @@ footer .name {
 
     50% {
         transform: translateY(-15px);
+        /* sobe 15px no meio da animação */
     }
 }
 
-@keyframes typewriter {
-    0% {
-        width: 0%;
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
 
-    50% {
-        width: 100%;
-    }
-
-    100% {
-        width: 0%;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -1093,6 +1089,29 @@ footer .name {
 }
 
 /* reponsividade */
+
+@media (min-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .contact-content {
+        padding: 0 40px;
+    }
+
+    .contact-form {
+        padding: 2.5rem;
+    }
+
+    .contact-intro {
+        text-align: left;
+    }
+
+    .contact-form {
+        padding: 2.5rem;
+    }
+}
 
 @media (max-width: 768px) {
     header {
@@ -1125,18 +1144,6 @@ footer .name {
         margin-top: 40px;
     }
 
-    @keyframes escrever {
-        to {
-            width: ch;
-        }
-    }
-
-    @keyframes piscar {
-        50% {
-            border-color: transparent;
-        }
-    }
-
     .hero-text {
         flex: none;
         width: 100%;
@@ -1155,26 +1162,21 @@ footer .name {
         gap: 1rem;
     }
 
-    .img_hero {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-
     .img_hero img {
-        width: 100%;
-        height: auto;
-        margin-left: 0px;
-        margin-top: 50px;
-        animation: fadeInUp 2s ease 0s forwards;
+        width: 340px;
+        height: 340px;
+        margin-top: 20%;
     }
 
     .sobre {
         flex-direction: column;
         text-align: center;
-        padding: 4rem 1rem;
         gap: 2rem;
         align-items: center;
+    }
+
+    .sobre-img {
+        display: none;
     }
 
     .sobre-text {
@@ -1199,12 +1201,6 @@ footer .name {
         margin-bottom: 2rem;
         text-align: center;
         font-size: 1.1rem;
-    }
-
-    .sobre-img {
-        flex: none;
-        width: 280px;
-        margin: 0 auto;
     }
 
     .projetos-grid {
@@ -1264,5 +1260,11 @@ footer .name {
 
     #darkmode {
         bottom: 7%;
+    }
+
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: hidden;
     }
 }
