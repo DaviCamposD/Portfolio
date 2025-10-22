@@ -990,6 +990,11 @@ footer .name {
 
 /* MODAL */
 
+#myModal{
+    display: none;
+}
+
+
 .modal-dialog {
     border: none;
     padding: 0;
@@ -1268,3 +1273,4 @@ footer .name {
         overflow-x: hidden;
     }
 }
+
