@@ -21,3 +21,37 @@ function FuncaoDarkmode() {
         button.textContent = "🌙";
     }
 }
+
+// MODAL 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('myModal');
+    const btn = document.querySelector('.myBtn');
+    const closeBtn = modal?.querySelector('.close');
+
+    if (!modal || !btn || !closeBtn) return;
+
+    btn.addEventListener('click', () => {
+        if (typeof modal.showModal === 'function') {
+            modal.showModal();
+        } else {
+            modal.setAttribute('open', '');
+        }
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; 
+    });
+
+    closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (typeof modal.close === 'function') {
+            modal.close();
+        }
+        modal.style.display = 'none'; 
+        document.body.style.overflow = ''; 
+    });
+
+    modal.addEventListener('close', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+});
