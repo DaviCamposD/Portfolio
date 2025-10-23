@@ -520,6 +520,13 @@ nav a:hover::after {
     color: var(--accent-green);
     margin-bottom: 2rem;
     opacity: 0.7;
+    margin-right: 1rem;
+}
+
+.experincia-titulo {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
 }
 
 .experiencia-text {
@@ -990,10 +997,9 @@ footer .name {
 
 /* MODAL */
 
-#myModal{
+#myModal {
     display: none;
 }
-
 
 .modal-dialog {
     border: none;
@@ -1273,4 +1279,3 @@ footer .name {
         overflow-x: hidden;
     }
 }
-
